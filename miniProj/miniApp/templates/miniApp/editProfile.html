@@ -1,0 +1,11 @@
+{% extends 'miniApp/index.html' %}
+
+{% block content %}
+<h2>EDIT PROFILE</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ edit_profile.as_p }}
+    <button>Submit</button>
+</form>
+<a href="{% url 'index' %}">BACK</a>
+{% endblock %}

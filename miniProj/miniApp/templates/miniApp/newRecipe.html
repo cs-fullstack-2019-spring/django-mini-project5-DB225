@@ -1,0 +1,12 @@
+{% extends 'miniApp/index.html' %}
+
+{% block content %}
+<h2>NEW RECIPE / EDIT RECIPE</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ newRecipe.as_p }}
+    <button>Submit</button>
+</form>
+
+<a href="{% url 'index' %}">BACK</a>
+{% endblock %}

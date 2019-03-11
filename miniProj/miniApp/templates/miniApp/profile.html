@@ -1,0 +1,12 @@
+{% extends 'miniApp/index.html' %}
+
+{% block content %}
+{% for eachEl in allProfiles %}
+{{ eachEl.username}}
+<a href="{% url 'editProfile' eachEl.id %}">Edit</a>
+<a href="{% url 'deleteProfile' eachEl.id %}">Delete</a>
+<br>
+{% endfor %}
+<br>
+<a href="{% url 'index' %}">BACK</a>
+{% endblock %}

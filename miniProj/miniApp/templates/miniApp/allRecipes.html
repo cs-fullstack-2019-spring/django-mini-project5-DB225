@@ -1,0 +1,25 @@
+{% extends 'miniApp/index.html' %}
+
+{% block content %}
+<h2>All Recipes</h2>
+<a href="{% url 'index' %}">BACK</a>
+{% if everyRecipe %}
+<div class="gridContainer">
+    {% for recipe in everyRecipe %}
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ recipe.picture}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ recipe.name }}</h5>
+            <p class="card-text">{{ recipe.description }}</p>
+            <p class="card-text">{{ recipe.dateCreate }}</p>
+            <p class="card-text">{{ recipe.creator}}</p>
+            <a href="{% url 'edit' recipe.id %}">Edit</a>
+            <a href="{% url 'delete' recipe.id %}">Delete</a> <br> <br>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<h1>No Recipe</h1>
+{% endif %}
+{% endblock %}
