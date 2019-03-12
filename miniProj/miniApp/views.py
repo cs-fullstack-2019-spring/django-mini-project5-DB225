@@ -25,7 +25,7 @@ def newProfile(request):
                                       password=request.POST["password"])
         User.objects.create_user(request.POST["username"], request.POST['email'], request.POST["password"])
         print("save")
-        newLogin.save()
+        # newLogin.save()
         return redirect('index')
 
     context = {

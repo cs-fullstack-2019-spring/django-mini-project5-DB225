@@ -34,3 +34,5 @@ The profile page should allow you to edit the logged in users:
 
 ## Challenge
 Include a delete button
+<hr>
+3 points. Edit profile doesn't work. Had to remove the user models from double saving to use the site. Can't add a recipe.
